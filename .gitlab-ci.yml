@@ -1,0 +1,15 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  image: lwolf/helm-kubectl-docker:v1.21.1-v3.6.0
+  before_script:
+    - kubectl config set-cluster my-cluster --server="$K3S_URL" --insecure-skip-tls-verify=true
+    - kubectl config set-credentials admin --token="$K3S_TOKEN"
+    - kubectl config set-context default-context --cluster=my-cluster --user=admin
+    - kubectl config use-context default-context
+  script:
+    - helm upgrade --install $CI_PROJECT_PATH_SLUG .helm --namespace monitoring
+  only:
+    - master

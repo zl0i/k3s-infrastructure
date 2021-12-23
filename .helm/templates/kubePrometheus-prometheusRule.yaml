@@ -15,8 +15,8 @@ spec:
     rules:
     - alert: TargetDown
       annotations:
-        description: '{{ printf "%.4g" $value }}% of the {{ $labels.job }}/{{ $labels.service
-          }} targets in {{ $labels.namespace }} namespace are down.'
+        description: '{{"{{" }} printf "%.4g" $value }}% of the {{"{{" }} $labels.job }}/{{"{{" }} $labels.service
+          }} targets in {{"{{" }} $labels.namespace }} namespace are down.'
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/general/targetdown
         summary: One or more targets are unreachable.
       expr: 100 * (count(up == 0) BY (job, namespace, service) / count(up) BY (job,
@@ -42,8 +42,8 @@ spec:
     rules:
     - alert: NodeNetworkInterfaceFlapping
       annotations:
-        description: Network interface "{{ $labels.device }}" changing its up status
-          often on node-exporter {{ $labels.namespace }}/{{ $labels.pod }}
+        description: Network interface "{{"{{" }} $labels.device }}" changing its up status
+          often on node-exporter {{"{{" }} $labels.namespace }}/{{"{{" }} $labels.pod }}
         runbook_url: https://runbooks.prometheus-operator.dev/runbooks/general/nodenetworkinterfaceflapping
         summary: Network interface is often changing its status
       expr: |
