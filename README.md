@@ -28,6 +28,16 @@ helm upgrade --install prometheus prometheus-community/prometheus --namespace mo
 helm upgrade --install prometheus-blackbox-exporter prometheus-community/prometheus-blackbox-exporter --namespace monitoring --create-namespace -f prometheus-blackbox-exporter/values.yaml --version 6.0.0
 ```
 
+## Loki
+```
+helm upgrade --install loki grafana/loki --namespace logs --create-namespace -f loki/values.yaml --version 2.13.3
+```
+
+## Promtail
+```
+helm upgrade --install promtail grafana/promtail --namespace logs --create-namespace -f promtail/values.yaml --version 6.2.2
+```
+
 ## Grafana 
 ```
 helm upgrade --install grafana grafana/grafana --namespace monitoring --create-namespace -f grafana/values.yaml --version 6.32.9
