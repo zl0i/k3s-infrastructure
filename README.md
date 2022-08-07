@@ -30,6 +30,5 @@ helm upgrade --install prometheus-blackbox-exporter prometheus-community/prometh
 
 ## Grafana 
 ```
-version: 6.32.9
-helm upgrade --install grafana grafana/grafana --namespace monitoring --create-namespace -f grafana/values.yaml --version 
+helm upgrade --install grafana grafana/grafana --namespace monitoring --create-namespace -f grafana/values.yaml --version 6.32.9
 ```
