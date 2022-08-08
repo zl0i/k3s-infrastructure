@@ -2866,6 +2866,7 @@ serverFiles:
         static_configs:
           - targets:
               - https://zloi.space
+              - https://postgres.zloi.space
         relabel_configs:
           - source_labels: [__address__]
             target_label: __param_target
