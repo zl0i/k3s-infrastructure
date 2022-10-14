@@ -42,3 +42,9 @@ helm upgrade --install promtail grafana/promtail --namespace logs --create-names
 ```
 helm upgrade --install grafana grafana/grafana --namespace monitoring --create-namespace -f grafana/values.yaml --version 6.32.9
 ```
+
+
+## Minio
+```
+helm upgrade --install minio bitnami/minio --namespace minio --create-namespace -f minio/values.yaml --version 11.10.7
+```
