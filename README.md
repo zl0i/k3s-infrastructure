@@ -30,6 +30,12 @@ helm upgrade --install prometheus prometheus-community/prometheus --namespace mo
 helm upgrade --install prometheus-blackbox-exporter prometheus-community/prometheus-blackbox-exporter --namespace monitoring --create-namespace -f prometheus-blackbox-exporter/values.yaml --version 6.0.0
 ```
 
+## Redis Exporter
+
+```
+helm upgrade --install prometheus-redis-exporter prometheus-community/prometheus-redis-exporter --namespace monitoring --create-namespace -f prometheus-redis-exporter/values.yaml --version 6.0.1
+```
+
 ## Loki
 
 ```
