@@ -200,7 +200,7 @@ statefulset:
   podManagementPolicy: Parallel
   ## @param statefulset.replicaCount Number of pods per zone (only for MinIO&reg; distributed mode). Should be even and `>= 4`
   ##
-  replicaCount: 4
+  replicaCount: 1
   ## @param statefulset.zones Number of zones (only for MinIO&reg; distributed mode)
   ##
   zones: 1
@@ -677,6 +677,7 @@ ingress:
   ##   cert-manager.io/cluster-issuer: cluster-issuer-name
   ##
   annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 8m
     cert-manager.io/cluster-issuer: letsencrypt-prod
   ## @param ingress.tls Enable TLS configuration for the hostname defined at `ingress.hostname` parameter
   ## TLS certificates will be retrieved from a TLS secret with name: `{{- printf "%s-tls" .Values.ingress.hostname }}`
