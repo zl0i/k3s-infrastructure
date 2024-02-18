@@ -65,3 +65,9 @@ helm upgrade --install minio bitnami/minio --namespace minio --create-namespace 
 ```
 helm upgrade --install keycloak bitnami/keycloak --namespace keycloak --create-namespace -f keycloak/values.yaml --version 10.1.6
 ```
+
+## Gitab Agent
+
+```
+helm upgrade --install gitlab-agent gitlab/gitlab-agent --namespace gitlab-agent --create-namespace -f gitlab-agent/values.yaml
+```
