@@ -2860,6 +2860,8 @@ serverFiles:
             action: drop
 
       - job_name: 'prometheus-blackbox-exporter'
+        scrape_interval: 5m
+        scrape_timeout: 30s
         metrics_path: /probe
         params:
           module: [http_2xx]
