@@ -2868,7 +2868,7 @@ serverFiles:
         static_configs:
           - targets:
               - https://zloi.space
-              - https://bot.zloi.space
+              - https://armybots.ru
         relabel_configs:
           - source_labels: [__address__]
             target_label: __param_target
