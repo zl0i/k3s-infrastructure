@@ -1449,7 +1449,7 @@ alertmanagerFiles:
       group_wait: 10s
       group_interval: 5m
       receiver: 'null'
-      repeat_interval: 4h
+      repeat_interval: 6h
       group_by:
         - alertname
       routes:
