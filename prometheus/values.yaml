@@ -2868,7 +2868,6 @@ serverFiles:
         static_configs:
           - targets:
               - https://zloi.space
-              - https://armybots.ru
         relabel_configs:
           - source_labels: [__address__]
             target_label: __param_target
@@ -2877,18 +2876,18 @@ serverFiles:
           - target_label: __address__
             replacement: prometheus-blackbox-exporter:9115
 
-      - job_name: 'prometheus_redis_exporter'
-        static_configs:
-          - targets:
-            - redis://redis-master-0.redis-headless.army.svc.cluster.local:6379
-        metrics_path: /scrape
-        relabel_configs:
-          - source_labels: [__address__]
-            target_label: __param_target
-          - source_labels: [__param_target]
-            target_label: instance
-          - target_label: __address__
-            replacement: prometheus-redis-exporter:9121
+      # - job_name: 'prometheus_redis_exporter'
+      #   static_configs:
+      #     - targets:
+      #       - redis://redis-master-0.redis-headless.army.svc.cluster.local:6379
+      #   metrics_path: /scrape
+      #   relabel_configs:
+      #     - source_labels: [__address__]
+      #       target_label: __param_target
+      #     - source_labels: [__param_target]
+      #       target_label: instance
+      #     - target_label: __address__
+      #       replacement: prometheus-redis-exporter:9121
 
 # adds additional scrape configs to prometheus.yml
 # must be a string so you have to add a | after extraScrapeConfigs:
